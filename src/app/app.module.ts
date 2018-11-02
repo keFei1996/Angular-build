@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HeroComponent } from './hero/hero.component';
+import {NgxEchartsModule} from 'ngx-echarts';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxEchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

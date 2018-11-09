@@ -19,12 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/plugin/daterangepicker/daterangepicker.css",
+        "assets/plugin/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/echarts/dist/echarts.min.js",
-        "../node_modules/echarts/dist/extension/bmap.js"
+        "../node_modules/echarts/dist/extension/bmap.js",
+        "../node_modules/moment/min/moment.min.js",
+        "assets/plugin/daterangepicker/daterangepicker.js",
+        "assets/plugin/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -8,6 +8,9 @@ import {ShareModule} from '../share/share.module';
 import { TimesDirective } from './times/times.directive';
 import { FormControlComponent } from './form-control/form-control.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { FormControlDirective } from './form-control/form-control.directive';
+import { AnimationsComponent } from './animations/animations.component';
+import { CeShiComponent } from './ceShi/ceshi.component';
 
 
 
@@ -19,6 +22,8 @@ export const mainRoutes: Routes = [
       { path: 'hero', component: HeroComponent},
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,
+      { path: 'animations' , component : AnimationsComponent},
+      { path: 'ceShi' , component : CeShiComponent},
     ]
   }
 ];
@@ -30,6 +35,15 @@ export const mainRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(mainRoutes)
   ],
-  declarations: [MainComponent, TimesComponent, HeroComponent, TimesDirective, FormControlComponent]
+  declarations: [
+    MainComponent,
+    TimesComponent,
+    HeroComponent,
+    TimesDirective,
+    FormControlComponent,
+    FormControlDirective,
+    AnimationsComponent,
+    CeShiComponent
+  ]
 })
 export class MainModule { }

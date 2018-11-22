@@ -1,0 +1,178 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./base.scss";
+//
+
+$sites: (
+a: null,
+t: top,
+r: right,
+b: bottom,
+l: left
+);
+
+$xs: 5px;                                       //超小号
+$sm: 10px;                                      //小号
+$md: 15px;                                      //中号
+$df: 20px;                                      //默认
+$lg: 25px;                                      //大号
+$xl: 30px;                                      //超大号
+
+$sizes: (
+0: 0,
+xs: $xs,
+sm: $sm,
+md: $md,
+df: $df,
+lg: $lg,
+xl: $xl
+);
+
+@function breakpoint-infix($key, $value) {
+  @return if($key == $value, "", "-#{$key}");
+}
+
+@each $prop,
+$abbrev in ( margin: m,
+padding: p) {
+  @each $name,
+  $value in $sites {
+    $site: breakpoint-infix($value, null);
+    @each $size,
+    $length in $sizes {
+      $type: breakpoint-infix($size, df);
+      .#{$abbrev}-#{$name}#{$type} {
+        #{$prop}#{$site}: $length !important;
+      }
+    }
+  }
+}
+//
+
+$zhu:red;
+
+.zhu{
+  color:$zhu;
+}
+.table-responsive {
+  //基础
+  &.table-base {
+    &>.table {
+      &>thead {
+        background: #fafbfe;
+        th {
+          height: 44px;
+        }
+      }
+    }
+    .table {
+      width: 100%;
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: 1px solid red;
+      background: #fff;
+      tr:hover {
+        &>td,
+        &>th {
+          &>.row {
+            .icon-drag,
+            .tree-handle:before {
+              color: red;
+            }
+          }
+        }
+      }
+      th,
+      td {
+        vertical-align: middle;
+        text-align: left;
+        &:last-child {
+          text-align: right;
+        }
+      }
+      th {
+        font-weight: normal;
+        overflow: hidden;
+        .select2-thead {
+          height: 100%;
+          .select2-container--default {
+            vertical-align: top;
+            height: 100%;
+            .select2-selection--single {
+              height: 100%;
+              border-top: 0;
+              border-bottom: 0;
+              .select2-selection__arrow {
+                top: 0;
+                height: 100%;
+              }
+            }
+            .select2-selection__rendered {
+              position: relative;
+              top: calc(50% - 17px);
+            }
+          }
+        }
+      }
+      label.error {
+        margin: 5px;
+      }
+      .icon-drag {
+        margin-right: 10px;
+        font-size: 20px;
+        color: red;
+        line-height: 1;
+        cursor: move;
+        vertical-align: -2px;
+      }
+      .sorting {
+        display: inline-block;
+        vertical-align: -3px;
+        cursor: pointer;
+        &:before,
+        &:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+        &:before {
+          margin-bottom: 4px;
+          border-width: 0 5px 6px;
+        }
+        &:after {
+          border-width: 6px 5px 0;
+        }
+        &.asc:before,
+        &.desc:after {
+        }
+      }
+    }
+    .table-bordered {
+      th,
+      td {
+
+      }
+    }
+    .table-center {
+      th,
+      td {
+        text-align: center !important;
+      }
+    }
+    .table-input {
+      input.form-control {
+        width: 100%;
+        border: 0;
+        text-align: center;
+      }
+    }
+    .empty-order {
+      padding: 50px 0;
+
+      border-top: none;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+  }}

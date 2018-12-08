@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Hero} from './hero';
 
 @Component({
   selector: 'app-form-control',
@@ -9,51 +7,45 @@ import {Hero} from './hero';
 })
 export class FormControlComponent implements OnInit {
 
-  profileForm = this.fb.group({
-    firstName : ['', Validators.required],
-    lastName : [''],
-    address : this.fb.group({
-      street : [''],
-      city : [''],
-      state : [''],
-      zip : [''],
-    }),
-    // aliases : this.fb.array([
-    //   this.fb.control(''),
-    // ]),
-  });
 
 
   constructor(
-    private  fb: FormBuilder,
-  ) { }
+
+  ) {
+  }
 
   ngOnInit() {
-       let myHero =  new Hero(42, 'SkyDog',
-      'Fetch any object at any distance',
-      'Leslie Rollover');
-    console.log('My hero is called ' + myHero.name);
+    // if( 11%3 && )
+    // let a = { name: '前端开发'};
+    // let b = a;
+    // console.log(b);
+    // console.log(a);
+    // a = { name: '后端开发'};
+    // console.log(b);
+    // console.log(a);
+    // a = null;
+    // console.log(b);
+    // console.log(a);
+    // let tmp = new Date();
+    //
+    // function f() {
+    //   console.log(tmp);
+    //   if (false) {
+    //     let tmp = 'hello world';
+    //   }
+    // }
+    //
+    // f();
+    console.log(11 % 3 && 7 || 2 );
+    console.log(11 % 3 && 7 );
   }
 
-  onSubmit() {
-    console.warn(this.profileForm.value);
-    console.log(1);
-  }
 
-  updateProfile() {
-    this.profileForm.patchValue({
-      firstName : 'Nancy',
-      address : {
-        street : '123 Drew Street'
-      }
-    });
-  }
-
-  get aliases() {
-    return this.profileForm.get('aliases') as FormArray;
-  }
-
-  addAlias() {
-    this.aliases.push(this.fb.control(''));
+  zhu() {
+    if (11 % 3 && 7 || 2 ) {
+      console.log(1);
+    } else {
+      console.log(2);
+    }
   }
 }

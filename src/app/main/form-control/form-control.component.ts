@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-
 @Component({
   selector: 'app-form-control',
   templateUrl: './form-control.component.html',
@@ -54,10 +53,12 @@ export class FormControlComponent implements OnInit {
   }
 
 
-
-
-  zhu(x) {
-    return Number.parseFloat(x).toFixed(2);
+  zhu() {
+    if (11 % 3 && 7 || 2 ) {
+      console.log(1);
+    } else {
+      console.log(2);
+    }
   }
 
 

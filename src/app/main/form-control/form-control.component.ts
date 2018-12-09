@@ -1,13 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-form-control',
   templateUrl: './form-control.component.html',
-  styleUrls: ['./form-control.component.css'],
 })
 export class FormControlComponent implements OnInit {
 
 
+  // @Input() count = 0;
+  //
+  // @Output() change: EventEmitter<number> = new EventEmitter<number>();
+
+  // increment() {
+  //   this.count++;
+  //   this.change.emit(this.count);
+  // }
+  //
+  // decrement() {
+  //   this.count--;
+  //   this.change.emit(this.count);
+  // }
 
   constructor(
 
@@ -41,11 +54,11 @@ export class FormControlComponent implements OnInit {
   }
 
 
-  zhu() {
-    if (11 % 3 && 7 || 2 ) {
-      console.log(1);
-    } else {
-      console.log(2);
-    }
+
+
+  zhu(x) {
+    return Number.parseFloat(x).toFixed(2);
   }
+
+
 }

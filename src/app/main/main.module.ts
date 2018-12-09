@@ -9,6 +9,9 @@ import { TimesDirective } from './times/times.directive';
 import { FormControlComponent } from './form-control/form-control.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpComponent } from './http/http.component';
+import { FormControlDirective } from './form-control/form-control.directive';
+import { AnimationsComponent } from './animations/animations.component';
+import { CeShiComponent } from './ceShi/ceshi.component';
 
 
 
@@ -21,6 +24,8 @@ export const mainRoutes: Routes = [
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,
       { path : 'http' , component : HttpComponent } ,
+      { path: 'animations' , component : AnimationsComponent},
+      { path: 'ceShi' , component : CeShiComponent},
     ]
   }
 ];
@@ -32,6 +37,16 @@ export const mainRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(mainRoutes)
   ],
-  declarations: [MainComponent, TimesComponent, HeroComponent, TimesDirective, FormControlComponent, HttpComponent]
+  declarations: [
+    MainComponent,
+    TimesComponent,
+    HeroComponent,
+    TimesDirective,
+    FormControlComponent,
+    FormControlDirective,
+    AnimationsComponent,
+    CeShiComponent,
+    HttpComponent
+  ]
 })
 export class MainModule { }

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NgxEchartsService} from 'ngx-echarts';
 import {HttpClient} from '@angular/common/http';
+// import * as echarts from 'echarts/jsfile'
+
 
 @Component({
   selector: 'app-hero',
@@ -8,15 +10,86 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./hero.component.css'],
   providers: [NgxEchartsService, HttpClient]
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit , AfterViewInit {
   options;
+  myChart;
+  mapEv;
+
+
+  // echarts = require('echarts');
+  @ViewChild('main') main;
+
+  onMapInit(ev) {
+    // this.mapEv = ev;
+  }
+
   constructor(
     private http: HttpClient,
     private es: NgxEchartsService,
   ) { }
 
   ngOnInit() {
+
     this.getMaps();
+    // this.main=es.echarts
+    // this.main.setOption({
+    //   title: {
+    //     text: 'ECharts 入门示例'
+    //   },
+    //   tooltip: {},
+    //   xAxis: {
+    //     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    //   },
+    //   yAxis: {},
+    //   series: [{
+    //     name: '销量',
+    //     type: 'bar',
+    //     data: [5, 20, 36, 10, 10, 20]
+    //   }]
+    // });
+
+      this.mapEv = this.es.init(this.main.nativeElement);
+      console.log(this.mapEv);
+      // console.log(this.mapEv);
+      this.mapEv.setOption({
+        title: {
+          text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }]
+      });
+  }
+
+  ngAfterViewInit() {
+    // console.log(this.es);
+    // setTimeout(() => {
+    //  this.mapEv = this.es.init(this.main.nativeElement);
+    //  console.log(this.mapEv);
+    //   // console.log(this.mapEv);
+    //   this.mapEv.setOption({
+    //     title: {
+    //       text: 'ECharts 入门示例'
+    //     },
+    //     tooltip: {},
+    //     xAxis: {
+    //       data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    //     },
+    //     yAxis: {},
+    //     series: [{
+    //       name: '销量',
+    //       type: 'bar',
+    //       data: [5, 20, 36, 10, 10, 20]
+    //     }]
+    //   });
+    // }, 1000);
   }
 
   getMaps() {

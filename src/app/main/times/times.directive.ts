@@ -1,5 +1,5 @@
 import {Directive, Input, Output, EventEmitter, ElementRef, AfterViewInit, OnChanges} from '@angular/core';
-import moment = require('moment');
+
 @Directive({
   selector: '[appTimes]'
 })

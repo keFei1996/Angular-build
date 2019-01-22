@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  // let xin2 = [1,2,3,4,5];
+  // let zhu = { name : 'ke', sex: '男', age: 10};
+  let kee =[
+    {name : 'ke', sex: '男'},
+    {name : 'xin', sex: '女'},
+    {name : 'zhu', sex: '无'},
+  ]
+  //
+  //
+  // function ke(zhu) {
+  //   for(const key of Object.keys(zhu)){
+  //     console.log(key);
+  //     console.log(zhu[key]);
+  //   }
+  // }
+  //
+  // ke(xin2);
+  // ke(zhu);
+  // ke(kee);
+
+  function cloneObj(obj){
+    if( typeof obj !== 'object'){
+      return  obj
+    } else {
+      const newObj= obj instanceof Array ? [] : {};
+      for(const key of Object.keys(obj)){
+        const val =obj[key];
+        newObj[key]= typeof val === 'object' ? cloneObj(val) : val;
+      }
+      return newObj;
+    }
+  }
+
+  console.log(cloneObj(kee));
+</script>
+</body>
+</html>

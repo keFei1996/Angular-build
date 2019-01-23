@@ -1,0 +1,843 @@
+{
+  "data": [
+    {
+      "icon": "&#xea9b;",
+      "name": "会员",
+      "rolePower": "membership-card",
+      "page_menu": "membership-card",
+      "second_level": [
+        {
+          "name": "会员管理",
+          "page_menu": "member-manage"
+        },
+        {
+          "name": "会员黑名单",
+          "page_menu": "blacklist"
+        },
+        {
+          "name": "异常预警",
+          "page_menu": "abnormal-alarm"
+        },
+        {
+          "name": "会员分析",
+          "page_menu": "report",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "获客分析",
+              "page_menu": "guest"
+
+            },
+            {
+              "name": "会员基本特征",
+              "page_menu": "base"
+            },
+            {
+              "name": "生命周期分析",
+              "page_menu": "life"
+            }
+          ]
+        },
+        {
+          "name": "计时计次卡",
+          "page_menu": "times-card",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "项目查询",
+              "page_menu": "consumer"
+
+            },
+            {
+              "name": "项目设置",
+              "page_menu": "project-list"
+            }
+          ]
+        },
+        {
+          "name": "会员卡模板",
+          "page_menu": "card-set/template"
+        },
+        {
+          "name": "资料设置",
+          "page_menu": "card-set/registered"
+        },
+        {
+          "name": "等级设置",
+          "page_menu": "grade-set",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "会员等级",
+              "page_menu": "grade"
+            },
+            {
+              "name": "会员特权",
+              "page_menu": "privilege"
+            }
+          ]
+        },
+        {
+          "name": "RFM模型设置",
+          "page_menu": "other/rfm"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea9c",
+      "name": "收银",
+      "page_menu": "cashier-pay",
+      "rolePower": "cashier-pay",
+      "second_level": [
+        {
+          "name": "商品管理",
+          "page_menu": "commodity-management",
+          "have_border_top": true,
+          "rolePower": "commodity-management",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "在售商品",
+              "page_menu": "in-selling"
+            },
+            {
+              "name": "停售商品",
+              "page_menu": "stop-selling"
+            },
+            {
+              "name": "商品排序",
+              "page_menu": "goods-sorting"
+            }
+          ]
+        },
+        {
+          "name": "套餐管理",
+          "page_menu": "package-management",
+          "rolePower": "package-management",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "在售套餐",
+              "page_menu": "in-selling"
+            },
+            {
+              "name": "停售套餐",
+              "page_menu": "stop-selling"
+            },
+            {
+              "name": "套餐排序",
+              "page_menu": "package-sorting"
+            }
+          ]
+        },
+        {
+          "name": "商品分类",
+          "page_menu": "goods-categories",
+          "rolePower": "goods-categories",
+          "isChangeThirdLevel": false
+        },
+        {
+          "name": "商品规格",
+          "page_menu": "goods-specifications",
+          "rolePower": "goods-specifications",
+          "isChangeThirdLevel": false,
+          "have_border": true
+        },
+        {
+          "name": "基础设置",
+          "page_menu": "system-setting/basic-settings"
+        },
+        {
+          "name": "活动券设置",
+          "page_menu": "system-setting/coupons-set"
+        },
+        {
+          "name": "打印设置",
+          "page_menu": "system-setting/ticket-printing",
+          "rolePower": "system-setting",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "打印设置",
+              "page_menu": "printer-settings"
+            },
+            {
+              "name": "结算小票",
+              "page_menu": "settlement-ticket"
+            }
+          ]
+        },
+        {
+          "name": "同步数据",
+          "page_menu": "system-setting/replace-data",
+          "rolePower": "pay-replace-data"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea9d;",
+      "name": "外卖",
+      "page_menu": "takeaway",
+      "rolePower": "takeaway",
+      "second_level": [
+        {
+          "name": "待处理订单",
+          "page_menu": "order-pending"
+        },
+        {
+          "name": "已完成订单",
+          "page_menu": "order-completed"
+        },
+        {
+          "name": "已退款订单 ",
+          "page_menu": "order-retired",
+          "have_border": true
+        },
+        {
+          "name": "商品管理",
+          "page_menu": "goods-manage",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "在售商品",
+              "page_menu": "sale"
+            },
+            {
+              "name": "已下架商品",
+              "page_menu": "sold"
+            },
+            {
+              "name": "商品排序",
+              "page_menu": "sort"
+            }
+          ]
+        },
+        {
+          "name": "商品分类 ",
+          "page_menu": "goods-category"
+        },
+        {
+          "name": "商品规格 ",
+          "page_menu": "goods-specification",
+          "have_border": true
+        },
+        {
+          "name": "门店信息",
+          "page_menu": "system-setup/store-info"
+        },
+        {
+          "name": "基础设置",
+          "page_menu": "system-setup/basic-setting"
+        },
+        {
+          "name": "第三方授权",
+          "rolePower": "authorization",
+          "page_menu": "system-setup/authorization"
+        },
+        {
+          "name": "同步数据",
+          "rolePower": "synchronous-data",
+          "page_menu": "system-setup/synchronous-data"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea97;",
+      "name": "商城",
+      "page_menu": "customer-mall",
+      "rolePower": "customer-mall",
+      "second_level": [
+        {
+          "name": "订单记录",
+          "page_menu": "order/record"
+        },
+        {
+          "name": "退款记录",
+          "page_menu": "order/refund"
+        },
+
+        {
+          "name": "在售商品",
+          "page_menu": "buy/onSale"
+        },
+        {
+          "name": "仓库商品",
+          "page_menu": "buy/house"
+        },
+        {
+          "name": "商品分类",
+          "page_menu": "buy/class"
+        },
+        {
+          "name": "商品排序",
+          "page_menu": "buy/sort"
+        },
+        {
+          "name": "广告管理",
+          "page_menu": "advertising"
+        },
+        {
+          "name": "销量分析",
+          "page_menu": "sales"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea9e;",
+      "name": "营销",
+      "page_menu": "marketing",
+      "rolePower":"marketing",
+      "second_level": [
+        {
+          "name": "优惠券",
+          "page_menu": "coupon",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "投放效果",
+              "page_menu": "delivery"
+            },
+            {
+              "name": "优惠券（手动投放）",
+              "page_menu": "coupon-manual"
+            },
+            {
+              "name": "优惠券（自动投放）",
+              "page_menu": "coupon-auto"
+            },
+            {
+              "name": "优惠券投放",
+              "page_menu": "coupon-release"
+            },
+            {
+              "name": "核销记录",
+              "page_menu": "coupon-verification"
+            }
+          ]
+        },
+        {
+          "name": "券包",
+          "page_menu": "my-coupons",
+          "isChangeThirdLevel": true,
+          "third_level":[
+            {
+              "name": "券包管理",
+              "page_menu": "coupon-package"
+            },
+            {
+              "name": "券包购买记录",
+              "page_menu": "coupon-purchase"
+            }
+          ]
+        },
+        {
+          "name": "礼品卡",
+          "page_menu": "gift-card",
+          "isChangeThirdLevel": true,
+          "third_level":[
+            {
+              "name": "营销效果",
+              "page_menu": "effect"
+            },
+            {
+              "name": "礼品卡管理",
+              "page_menu": "management"
+            },
+            {
+              "name":"微信购买记录",
+              "page_menu":"recording"
+            }
+          ]
+        },
+        {
+          "name": "会员储值",
+          "page_menu": "reserve-sets",
+          "rolePower": "membership-card",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "储值模板",
+              "page_menu": "template"
+            },
+            {
+              "name": "门店储值权限",
+              "page_menu": "stored",
+              "rolePower": "store_credit_limit"
+            }
+          ]
+        },
+        {
+          "name": "会员营销",
+          "rolePower": "marketing-member",
+          "page_menu": "member"
+        },
+        {
+          "name": "积分中心",
+          "page_menu": "points",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "积分总览",
+              "page_menu": "overview"
+            },
+            {
+              "name": "积分明细",
+              "page_menu": "details"
+            },
+            {
+              "name": "积分设置",
+              "page_menu": "setting"
+            }
+          ]
+        },
+        {
+          "name": "模板消息",
+          "page_menu": "message",
+          "isChangeThirdLevel":true,
+          "third_level":[
+            {
+              "name": "模板消息",
+              "page_menu": "list"
+            },
+            {
+              "name": "模板管理",
+              "page_menu": "management"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "&#xeaf0;",
+      "name": "库存",
+      "page_menu": "stock",
+      "rolePower": "invoicing",
+      "second_level": [
+        {
+          "name": "库存查询",
+          "page_menu": "invoicing/inquiry"
+        },
+        {
+          "name": "预售清单",
+          "page_menu": "invoicing/pre-sale-list",
+          "isChangeThirdLevel": false
+        },
+        {
+          "name": "入库单",
+          "page_menu": "invoicing/receipt"
+        },
+        {
+          "name": "退货单",
+          "page_menu": "invoicing/return"
+        },
+        {
+          "name": "调拨单",
+          "page_menu": "invoicing/requisition"
+        },
+        {
+          "name": "盘存单",
+          "page_menu": "invoicing/inventory"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea99;",
+      "name": "报表",
+      "page_menu": "statement",
+      "rolePower": "statement",
+      "second_level": [
+        {
+          "name": "对账报表",
+          "page_menu": "reconciliation",
+          "third_level":[
+            {
+              "name": "收入来源",
+              "page_menu": "income-source"
+            },
+            {
+              "name": "收入对比",
+              "page_menu": "income-comparison",
+              "have_border": true
+            },
+            {
+              "name": "银行结算",
+              "page_menu": "bank-settlement"
+            },
+            {
+              "name": "开票统计",
+              "page_menu": "billing-statistics"
+            }
+          ]
+        },
+        {
+          "name": "会员报表",
+          "page_menu": "member",
+          "rolePower": "membership-card",
+          "have_border_top": true,
+          "third_level":[
+            {
+              "name": "储值报表",
+              "page_menu": "reserve-value",
+              "rolePower": "reserve-value",
+              "fourth_level":[
+                {
+                  "name": "经营报表",
+                  "page_menu": "operating"
+                },
+                {
+                  "name": "经营数据对比",
+                  "page_menu": "business"
+                }
+              ]
+            },
+            {
+              "name": "储值明细",
+              "page_menu": "value/detailes"
+            },
+            {
+              "name": "消费明细",
+              "page_menu": "value/consu"
+            },
+            {
+              "name": "卡购买明细",
+              "page_menu": "other/count"
+            },
+            {
+              "name": "挂失卡明细",
+              "page_menu": "other/lose"
+            }
+          ]
+        },
+        {
+          "name": "商品收银报表",
+          "page_menu": "",
+          "rolePower": "cashier-pay",
+          "have_border_top": true,
+          "third_level":[
+            {
+              "name": "商品收银报表",
+              "page_menu": "cashier",
+              "fourth_level":[
+                {
+                  "name": "经营报表",
+                  "page_menu": "operating"
+                },
+                {
+                  "name": "经营数据对比",
+                  "page_menu": "business"
+                },
+                {
+                  "name": "时段营收对比",
+                  "page_menu": "intermittent"
+                }
+              ]
+            },
+            {
+              "name": "设备收入报表",
+              "page_menu": "equipment"
+            },
+            {
+              "name":"商品收银明细",
+              "rolePower": "billing-detail",
+              "page_menu": "pay/billing-detail"
+            },
+            {
+              "name":"反结账明细",
+              "rolePower": "anti-billing-detail",
+              "page_menu": "pay/anti-billing-detail"
+            },
+            {
+              "name": "开票明细",
+              "page_menu": "ticket",
+              "fourth_level":[
+                {
+                  "name": "蓝票",
+                  "page_menu": "blue"
+                },
+                {
+                  "name": "红票",
+                  "page_menu": "red"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "快速收银报表",
+          "page_menu": "",
+          "rolePower": "pay-quickly",
+          "have_border_top": true,
+          "third_level":[
+            {
+              "name": "快速买单",
+              "page_menu": "pay-quickly",
+              "fourth_level":[
+                {
+                  "name": "经营报表",
+                  "page_menu": "operating"
+                },
+                {
+                  "name": "经营数据对比",
+                  "page_menu": "business"
+                },
+                {
+                  "name": "时段营收对比",
+                  "page_menu": "intermittent"
+                }
+              ]
+            },
+            {
+              "name":"快速收银明细",
+              "page_menu": "pay/pay-detail"
+            }
+          ]
+        },
+        {
+          "name": "外卖报表",
+          "page_menu": "takeaway-delivery",
+          "rolePower": "takeaway",
+          "have_border_top": true,
+          "isChangeThirdLevel": true,
+          "third_level":[
+            {
+              "name": "经营报表",
+              "page_menu": "operating"
+            },
+            {
+              "name": "经营数据对比",
+              "page_menu": "business"
+            },
+            {
+              "name": "时段营收对比",
+              "page_menu": "intermittent"
+            },
+            {
+              "name": "第三方平台统计",
+              "page_menu": "third"
+            }
+          ]
+        },
+        {
+          "name": "销量报表",
+          "page_menu": "",
+          "have_border_top": true,
+          "third_level":[
+            {
+              "name": "商品收银销量",
+              "page_menu": "sales-analysis",
+              "rolePower": "cashier-pay",
+              "fourth_level": [
+                {
+                  "name": "商品销量",
+                  "page_menu": "sales-goods"
+                },
+                {
+                  "name": "套餐销量",
+                  "page_menu": "package-sales"
+                },
+                {
+                  "name": "分类销量",
+                  "page_menu": "classified-sales"
+                },
+                {
+                  "name": "单品销量趋势",
+                  "page_menu": "single-sales-trend"
+                }
+              ]
+            },
+            {
+              "name": "外卖销量",
+              "page_menu": "tkanalysis",
+              "rolePower": "tkanalysis",
+              "fourth_level": [
+                {
+                  "name": "商品销量",
+                  "page_menu": "sales-goods"
+                },
+                {
+                  "name": "分类销量",
+                  "page_menu": "classified-sales"
+                },
+                {
+                  "name": "单品销量趋势",
+                  "page_menu": "single-sales-trend"
+                }
+              ]
+            },
+            {
+              "name": "喜好分析",
+              "rolePower": "cashier-pay",
+              "page_menu": "reason-analysis/specifications"
+            },
+            {
+              "name": "异常分析",
+              "rolePower": "cashier-pay",
+              "page_menu": "reason-analysis/reason-analysis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "&#xea9a;",
+      "name": "设置",
+      "page_menu": "setup",
+      "rolePower": "setup",
+      "second_level": [
+        {
+          "name": "账户管理",
+          "page_menu": "account-manage",
+          "isChangeThirdLevel": true,
+          "rolePower": "account_manage",
+            "third_level": [
+            {
+              "name": "账户管理",
+              "page_menu": "account"
+            },
+            {
+              "name": "角色管理",
+              "page_menu": "role"
+            }
+          ]
+        },
+        {
+          "name": "门店管理",
+          "page_menu": "store-manage",
+          "rolePower": "store_manage"
+        },
+        {
+          "name": "桌位管理",
+          "page_menu": "table-manage",
+          "rolePower": "table-manage",
+          "isChangeThirdLevel": true,
+          "third_level": [
+            {
+              "name": "桌位管理",
+              "page_menu": "list"
+            },
+            {
+              "name": "桌位分区",
+              "page_menu": "division"
+            }
+          ]
+        },
+        {
+          "name": "员工管理",
+          "page_menu": "staff-manage",
+          "rolePower": "staff-manage",
+          "have_border": true
+        },
+        {
+          "name": "物料下载",
+          "page_menu": "material-download",
+          "rolePower": "material-download"
+        },
+        {
+          "name": "页面链接",
+          "page_menu": "page-link",
+          "rolePower": "page_link"
+        },
+        {
+          "name": "第三方授权",
+          "page_menu": "third-party-auth",
+          "isChangeThirdLevel": true,
+          "have_border": true,
+          "rolePower": "third-party-auth",
+          "third_level": [
+            {
+              "name": "微信公众号授权",
+              "page_menu": "mirco",
+              "rolePower": "mirco"
+            },
+            {
+              "name": "支付宝授权",
+              "page_menu": "alipay",
+              "rolePower": "alipay"
+            },
+            {
+              "name": "小程序授权",
+              "page_menu": "applet",
+              "rolePower": "applet"
+            }
+          ]
+        },
+        {
+          "name": "自定义菜单",
+          "page_menu": "custom-menu",
+          "rolePower": "custom-menu"
+        },
+        {
+          "name": "操作日志",
+          "page_menu": "operation-log",
+          "rolePower": "operation-log"
+        }
+      ]
+    },
+    {
+      "icon": "&#xea97;",
+      "name": "商城",
+      "page_menu": "mall",
+      "rolePower": "mall",
+      "second_level": [
+        {
+          "name": "报表",
+          "page_menu": "report",
+          "third_level":[
+            {
+              "name": "订单管理",
+              "page_menu": "order-management"
+            },
+            {
+              "name": "销量分析",
+              "page_menu": "sales-analysis"
+            },
+            {
+              "name": "商家结算",
+              "page_menu": "merchant-billing"
+            },
+            {
+              "name": "银行结算",
+              "page_menu": "bank-report"
+            }
+          ]
+        },
+        {
+          "name": "商品",
+          "page_menu": "commodity",
+          "third_level":[
+            {
+              "name": "在售商品",
+              "page_menu": "in-stock"
+            },
+            {
+              "name": "下架商品",
+              "page_menu": "obtained"
+            },
+            {
+              "name": "商品排序",
+              "page_menu": "item-sorting"
+            }
+          ]
+        },
+        {
+          "name": "商家",
+          "page_menu": "merchant",
+          "third_level":[
+            {
+              "name": "商家管理",
+              "page_menu": "merchant-manage"
+            },
+            {
+              "name": "商家分类",
+              "page_menu": "merchant-classify"
+            }
+          ]
+        },
+        {
+          "name": "广告",
+          "page_menu": "advertising-list"
+        }
+      ]
+    }
+  ]
+}

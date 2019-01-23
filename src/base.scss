@@ -1,3 +1,96 @@
 //@function breakpoint-infix($key, $value) {
 //  @return if($key == $value, "", "-#{$key}");
 //}
+$sites: (
+  a: null,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+$xs: 5px;                                       //超小号
+$sm: 10px;                                      //小号
+$md: 15px;                                      //中号
+$df: 20px;                                      //默认
+$lg: 25px;                                      //大号
+$xl: 30px;                                      //超大号
+
+$sizes: (
+  0: 0,
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  df: $df,
+  lg: $lg,
+  xl: $xl
+);
+
+
+//
+// font
+//
+
+$font-size-base: 14px;                          //正文
+$font-size-title: 16px;                         //标题
+
+
+//
+// color
+//
+
+$color-main: #051024;                           //标题正文
+$color-minor: #304b78;                          //次级信息
+$color-assist: #8798ad;                         //辅助文案
+$color-tips: #8a9fbd;                           //输入框提示
+$color-error: #ff5e5e;                          //错误提示
+$color-handle: #4d7dfe;                         //操作
+$color-handle-hover: #335dcc;                   //操作-鼠标移上
+$color-border: #e6ecff;                         //边框
+$color-adorn: #a3b4cd;                          //装饰
+
+//
+// button
+//
+
+//主要
+$button-main: #dd433e;
+$button-main-hover: #c6221e;
+
+//次要
+$button-minor: #1b1e24;
+$button-minor-hover: #000000;
+
+//操作
+$button-handle: $color-handle;
+$button-handle-hover: $color-handle-hover;
+
+//默认
+$button-default: #ffffff;
+$button-default-hover: #f4f7ff;
+
+//禁用
+$button-disabled-opacity: .5;
+
+//宽度
+$button-width-sm: 115px;
+$button-width-md: 140px;
+$button-width-lg: 300px;
+
+//圆角
+$button-border-radius: 2px;
+
+
+//
+//  line-height
+//
+
+$line-height-base: 1.5;
+
+
+//iconfont
+%iconfont{
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+}

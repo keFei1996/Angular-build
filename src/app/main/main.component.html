@@ -1,7 +1,25 @@
-<h1 routerLink="time">时间JS</h1>
-<h1 routerLink="hero">地图JS</h1>
-<h1 routerLink="form">表单</h1>
-<h1 routerLink="http">Http</h1>
-<h1 routerLink="animations">动画</h1>
-<h1 routerLink="ceShi">测试</h1>
-<router-outlet></router-outlet>
+<!--<h1 routerLink="time">时间JS</h1>-->
+<!--<h1 routerLink="hero">地图JS</h1>-->
+<!--<h1 routerLink="form">表单</h1>-->
+<!--<h1 routerLink="http">Http</h1>-->
+<!--<h1 routerLink="animations">动画</h1>-->
+<!--<h1 routerLink="ceShi">测试</h1>-->
+<!--<router-outlet></router-outlet>-->
+<div class="web-layout">
+  <div class="layout-sideBar">
+    <div class="accounts">
+      <img  src="assets/images/couponPic.jpg">
+      <span class="name">早饭吃泡饭</span>
+    </div>
+    <div class="menu-box">
+      <ul class="first-level-list">
+        <li *ngFor="let menu of menuData">
+          <div class="iconfontFather" routerLink="{{menu.page_menu}}">
+            <span class="iconfont" [innerHtml]="menu.icon" ></span>
+            <span> {{menu.name}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

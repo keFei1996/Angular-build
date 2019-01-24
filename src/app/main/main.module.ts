@@ -20,6 +20,7 @@ export const mainRoutes: Routes = [
     path: '' ,
     component : MainComponent,
     children: [
+      { path: '', redirectTo: 'animations', pathMath: 'full'},
       { path: 'hero', component: HeroComponent},
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,

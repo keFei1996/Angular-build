@@ -2,9 +2,8 @@
   "data": [
     {
       "icon": "&#xea9b;",
-      "name": "会员",
-      "rolePower": "membership-card",
-      "page_menu": "membership-card",
+      "name": "动画",
+      "page_menu": "animations",
       "second_level": [
         {
           "name": "会员管理",
@@ -85,8 +84,8 @@
     },
     {
       "icon": "&#xea9c",
-      "name": "收银",
-      "page_menu": "cashier-pay",
+      "name": "测试",
+      "page_menu": "ceShi",
       "rolePower": "cashier-pay",
       "second_level": [
         {

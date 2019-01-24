@@ -2,6 +2,17 @@
 @import "./base.scss";
 //
 
+@font-face {
+  font-family: 'iconfont';  /* project id 1029414 */
+  src: url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.eot');
+  src: url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1029414_q9x90cmwpfe.svg#iconfont') format('svg');
+}
+
+
 .iconfont {
   @extend %iconfont;
 }
@@ -56,6 +67,10 @@ a {
   color: #000;
 }
 
+:focus {
+  outline: none;
+}
+
 input,
 textarea,
 select,
@@ -79,6 +94,12 @@ body {
 .web-layout{
   display: flex;
   height: 100%;
+  .main-body {
+    position: relative;
+    flex: 1;
+    background: #f3f7fd;
+    overflow: auto;
+  }
 }
 
 .layout-sideBar{
@@ -140,6 +161,71 @@ body {
             text-align: center;
             font-size: 18px;
             margin-right: 3px;
+          }
+        }
+      }
+      .second-level-list {
+        display: none;
+        position: fixed;
+        left: 80px;
+        top: 54px;
+        bottom: 0;
+        width: 140px;
+        color: #818b97;
+        background-color: #11141b;
+        li {
+          position: relative;
+          cursor: pointer;
+          &:not(.child-list) {
+            padding-left: $df;
+            &:hover,
+            &.active {
+              background: #000;
+              color: #fff;
+            }
+            &.active {
+              overflow: hidden;
+              &:after {
+                content: '\eab3';
+                @extend %iconfont;
+                color: #f3f7fd;
+                position: absolute;
+                top: 0;
+                right: -4px;
+              }
+            }
+          }
+        }
+        &>li.have-border {
+          border-bottom: 1px solid #000;
+        }
+        &>li.have-border-top {
+          border-top: 1px solid #000;
+        }
+        &>.child-list {
+          &.on {
+            &>.title:after {
+              transform: rotate(180deg);
+            }
+            .third-level-list {
+              display: block;
+            }
+          }
+          &>.title {
+            position: relative;
+            display: block;
+            padding: 0 30px 0 20px;
+            &:after {
+              content: '\e649';
+              @extend %iconfont;
+              position: absolute;
+              right: $md;
+              transition: transform .4s;
+            }
+            &:hover {
+              background: #000;
+              color: #fff;
+            }
           }
         }
       }

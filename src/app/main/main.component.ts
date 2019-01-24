@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
   getMenu() {
     this.appService.getMenu().subscribe((res: any) => {
       this.menuData = res.data;
+      console.log(this.menuData);
     });
   }
 

@@ -4,7 +4,6 @@
 <!--<h1 routerLink="http">Http</h1>-->
 <!--<h1 routerLink="animations">动画</h1>-->
 <!--<h1 routerLink="ceShi">测试</h1>-->
-<!--<router-outlet></router-outlet>-->
 <div class="web-layout">
   <div class="layout-sideBar">
     <div class="accounts">
@@ -13,13 +12,21 @@
     </div>
     <div class="menu-box">
       <ul class="first-level-list">
-        <li *ngFor="let menu of menuData">
+        <li *ngFor="let menu of menuData" routerLinkActive="active">
           <div class="iconfontFather" routerLink="{{menu.page_menu}}">
-            <span class="iconfont" [innerHtml]="menu.icon" ></span>
+            <span class="iconfont">&#xe6f8;</span>
             <span> {{menu.name}}</span>
           </div>
+          <ul class="second-level-list">
+            <li *ngFor="let item of menu?.second_level">
+              {{item.name}}
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
+  </div>
+  <div class="main-body">
+    <router-outlet></router-outlet>
   </div>
 </div>

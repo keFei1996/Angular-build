@@ -10,3 +10,16 @@
   font-weight: bold;
   font-size: 20px;
 }
+.txtHidden{
+  width: 100px;
+  display: -webkit-box;
+  text-overflow:ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 24px;
+  padding: 0;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+
+}

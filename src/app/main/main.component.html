@@ -18,9 +18,13 @@
             <span> {{menu.name}}</span>
           </div>
           <ul class="second-level-list">
-            <li *ngFor="let item of menu?.second_level">
-              {{item.name}}
-            </li>
+            <!--<ng-container routerLinkActive="active">-->
+              <li *ngFor="let item of menu?.second_level"  routerLinkActive="active">
+                <div routerLink="three">
+                  {{item.name}}
+                </div>
+              </li>
+            <!--</ng-container>-->
           </ul>
         </li>
       </ul>

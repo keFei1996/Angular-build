@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {HeroComponent} from './hero/hero.component';
-import {MainComponent} from './main.component';
-import {TimesComponent} from './times/times.component';
-import {ShareModule} from '../share/share.module';
+import { RouterModule, Routes} from '@angular/router';
+import { MainComponent} from './main.component';
+import { TimesComponent} from './times/times.component';
+import { ShareModule} from '../share/share.module';
 import { TimesDirective } from './times/times.directive';
 import { FormControlComponent } from './form-control/form-control.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { HttpComponent } from './http/http.component';
 import { FormControlDirective } from './form-control/form-control.directive';
 import { AnimationsComponent } from './animations/animations.component';
@@ -21,7 +20,7 @@ export const mainRoutes: Routes = [
     component : MainComponent,
     children: [
       { path: '', redirectTo: 'hero', pathMatch: 'full'},
-      { path: 'hero', component: HeroComponent},
+      { path: 'hero', loadChildren : './hero/hero.module#HeroModule'},
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,
       { path : 'http' , component : HttpComponent } ,
@@ -41,7 +40,6 @@ export const mainRoutes: Routes = [
   declarations: [
     MainComponent,
     TimesComponent,
-    HeroComponent,
     TimesDirective,
     FormControlComponent,
     FormControlDirective,

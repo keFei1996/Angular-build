@@ -3,7 +3,13 @@
     {
       "icon": "&#xea9b;",
       "name": "英雄",
-      "page_menu": "hero"
+      "page_menu": "hero",
+      "second_level":[
+        {
+          "name": "3D效果",
+          "page_menu": "three"
+        }
+      ]
     },
     {
       "icon": "&#xea9b;",

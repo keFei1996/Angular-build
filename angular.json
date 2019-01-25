@@ -22,7 +22,6 @@
             ],
             "styles": [
               "src/styles.scss",
-
               "src/assets/plugin/daterangepicker/daterangepicker.css",
               "src/assets/plugin/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"
             ],

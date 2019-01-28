@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewChildren} from '@angular/core';
 import {AppService} from "../app.service";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html'
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit , AfterViewInit{
 
+  @ViewChild('routerThree') routerThree: ElementRef;
   initialCount: number = 5;
 
   changeMsg: string;
@@ -22,6 +23,12 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getMenu();
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.log(this.routerThree.nativeElement);
+    }, 1000);
   }
 
   //获取菜单

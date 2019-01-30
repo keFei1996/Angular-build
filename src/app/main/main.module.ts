@@ -20,6 +20,7 @@ export const mainRoutes: Routes = [
     component : MainComponent,
     children: [
       { path: '', redirectTo: 'hero', pathMatch: 'full'},
+      { path: 'sports' , loadChildren: './sports-store/sports-store.module#SportsStoreModule'},
       { path: 'hero', loadChildren : './hero/hero.module#HeroModule'},
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,

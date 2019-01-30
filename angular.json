@@ -23,7 +23,8 @@
             "styles": [
               "src/styles.scss",
               "src/assets/plugin/daterangepicker/daterangepicker.css",
-              "src/assets/plugin/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"
+              "src/assets/plugin/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -31,7 +32,9 @@
               "node_modules/echarts/dist/extension/bmap.js",
               "node_modules/moment/min/moment.min.js",
               "src/assets/plugin/daterangepicker/daterangepicker.js",
-              "src/assets/plugin/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"
+              "src/assets/plugin/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

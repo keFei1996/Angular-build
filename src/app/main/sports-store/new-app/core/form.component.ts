@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Product } from "../model/product.model";
-import { Model } from "../model/repository.model"
+import { Model } from "../model/repository.model";
 import { MODES, SharedState } from "./sharedState.model";
 
 @Component({
-    selector: "paForm",
+    selector: "app-pa-form",
     moduleId: module.id,
     templateUrl: "form.component.html",
     styleUrls: ["form.component.css"]
@@ -15,9 +15,9 @@ export class FormComponent {
 
     constructor(private model: Model,
             private state: SharedState) { }
-    
+
     get editing(): boolean {
-        return this.state.mode == MODES.EDIT;
+        return this.state.mode === MODES.EDIT;
     }
 
     submitForm(form: NgForm) {

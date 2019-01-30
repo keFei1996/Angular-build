@@ -8,7 +8,7 @@ export const sportsRoutes: Routes = [
     component: SportsStoreComponent,
     children: [
       { path: '', redirectTo: 'newApp' , pathMatch: 'full'},
-      { path: 'newApp', component: NewAppComponent },
+      { path: 'newApp', loadChildren: './new-app/new-app.module#NewAppModule'},
     ]
   }
 ];

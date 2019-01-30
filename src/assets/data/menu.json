@@ -35,6 +35,11 @@
       "icon": "&#xea9b;",
       "name": "测试",
       "page_menu": "ceShi"
+    },
+    {
+      "icon": "&#xea9b;",
+      "name": "仓库",
+      "page_menu": "sports"
     }
   ]
 }

@@ -4,7 +4,7 @@ import { Model } from "../model/repository.model";
 import { MODES, SharedState } from "./sharedState.model";
 
 @Component({
-    selector: "paTable",
+    selector: "app-pa-table",
     moduleId: module.id,
     templateUrl: "table.component.html"
 })

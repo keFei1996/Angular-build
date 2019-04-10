@@ -1,13 +1,8 @@
-//@function breakpoint-infix($key, $value) {
-//  @return if($key == $value, "", "-#{$key}");
-//}
-$sites: (
-  a: null,
-  t: top,
-  r: right,
-  b: bottom,
-  l: left
-);
+/* variable */
+
+//
+// size
+//
 
 $xs: 5px;                                       //超小号
 $sm: 10px;                                      //小号
@@ -16,6 +11,12 @@ $df: 20px;                                      //默认
 $lg: 25px;                                      //大号
 $xl: 30px;                                      //超大号
 
+
+//
+// margin && padding
+//
+
+//型号列表
 $sizes: (
   0: 0,
   xs: $xs,
@@ -25,6 +26,30 @@ $sizes: (
   lg: $lg,
   xl: $xl
 );
+
+//位置列表
+$sites: (
+  a: null,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+//返回属性断点值
+@function breakpoint-infix($key, $value) {
+  @return if($key == $value, "", "-#{$key}");
+}
+
+//媒体查询断点
+$grid-breakpoints: (
+  md: 992px,
+  lg: 1200px,
+  xl: 1600px
+);
+
+//栅格数量
+$columns: 12;
 
 
 //
@@ -48,6 +73,7 @@ $color-handle: #4d7dfe;                         //操作
 $color-handle-hover: #335dcc;                   //操作-鼠标移上
 $color-border: #e6ecff;                         //边框
 $color-adorn: #a3b4cd;                          //装饰
+$color-default: #ffffff;                        //白色
 
 //
 // button
@@ -82,15 +108,391 @@ $button-border-radius: 2px;
 
 
 //
+// height
+//
+
+$height-base: 34px;
+
+
+//
 //  line-height
 //
 
 $line-height-base: 1.5;
 
 
+//
+//  z-index
+//
+
+$zindex-popover:            1060;
+$zindex-tooltip:            1070;
+$zindex-modal-backdrop:     1080;
+$zindex-modal:              1090;
+$zindex-select2:            1100;
+
+
+//
+//
+//
+
+
+
+/* /variable */
+
+
+/* mixin */
+
+//补充浏览器前缀
+//@mixin prefix($key, $value, $place: true) {
+//  @each $browser in -webkit-,-moz-,-ms-,-o-{
+//    @if $place {
+//      #{$browser}#{$key}: $value;
+//    } @else {
+//      $key: #{$browser}#{$value};
+//    }
+//  }
+//  $key: $value;
+//}
+
+
+//滚动条样式
+@mixin scrollbar-style($theme: null, $size: 8px, $show: true){
+  $width: $size;
+  $height: $size;
+  @if $show {
+    $color: #cbd9ed;
+    $hover: #a9bbd7;
+    @if $theme == white {
+      $color: #ebf1fb;
+      $hover: #d9e5f6;
+    }
+    #{if(&, "&", "*")}::-webkit-scrollbar-thumb{ /* 滑块颜色 */
+      background: $color;
+      border-radius: $width / 2;
+    }
+    #{if(&, "&", "*")}::-webkit-scrollbar-thumb:hover{ /* 滑块经过颜色 */
+      background: $hover;
+    }
+  } @else {
+    $width: 0;
+    $height: 0;
+  }
+  #{if(&, "&", "*")}::-webkit-scrollbar{ /* 滚动条整体部分 */
+    width: $width;
+    height: $height
+  }
+}
+
+//带间隙的滚动条
+@mixin scrollbar-gap($theme: null, $size: 8px, $gap: 6px, $color: #fff) {
+  $width: $gap * 2 + $size;
+  @include scrollbar-style($theme);
+  #{if(&, "&", "*")}::-webkit-scrollbar{
+    width: $width;
+  }
+  #{if(&, "&", "*")}::-webkit-scrollbar-thumb{
+    border: $gap solid $color;
+    @include border-radius($width / 2);
+  }
+}
+
+//圆角
+@mixin border-radius($r: 50%){
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  border-radius: $r;
+}
+
+//阴影
+@mixin box-shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+//线性渐变
+@mixin linear-gradient($angle, $start, $end){
+  background: -webkit-linear-gradient($angle, $start, $end);
+  background: -o-linear-gradient($angle, $start, $end);
+  background: -moz-linear-gradient($angle, $start, $end);
+  background: linear-gradient($angle, $start, $end);
+}
+
+//placeholder
+@mixin placeholder($c: #ccc){
+  input::-moz-placeholder, textarea::-moz-placeholder {color: $c}
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {color: $c}
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: $c}
+}
+
+//单行文本截断
+@mixin text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//多行文本截断
+@mixin text-overflow-more($number){
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}
+
+//分割线（X轴）
+@mixin split-line-x($color:#eee, $if:true){
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid $color;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  @if $if {
+    bottom: 0;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  } @else {
+    top: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+
+//分割线（Y轴）
+@mixin split-line-y($color:#eee, $if:true){
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  border-right: 1px solid $color;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+  @if $if {
+    left: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  } @else {
+    right: 0;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+}
+
+//无边框下拉框
+@mixin select2-no-border($h) {
+  .select2-container {
+    display: inline-block;
+    vertical-align: top;
+    .select2-selection--single {
+      border: 0;
+      height: $h;
+      .select2-selection__rendered {
+        padding: 0;
+        line-height: $h;
+        &:before {
+          content: '\eaa1';
+          @extend %iconfont;
+          font-size: 20px;
+          margin-right: 5px;
+          vertical-align: -2px;
+        }
+      }
+      .select2-selection__arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+/* /mixin */
+
+/* extend */
+
+//禁止用户选择
+%user-select{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//清除浮动
+%clearfix{
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+//帮助文本
+%help-tips{
+  position: relative;
+  display: inline-block;
+  &:hover{
+    .help-pos{
+      display: block;
+    }
+  }
+  .icon-question{
+    margin-left: 5px;
+    vertical-align: -2px;
+    font-size: 20px;
+    color: #a6bfee;
+    line-height: 1;
+    cursor: default;
+  }
+  .help-pos{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    padding-top: 7px;
+    width: 440px;
+    text-align: right;
+  }
+  .help-txt{
+    display: inline-block;
+    padding: 28px;
+    max-width: 100%;
+    min-width: 300px;
+    background: #fff;
+    @include box-shadow(0 1px 14px rgba(#0b68f3,.16));
+    *{
+      text-align: left;
+    }
+    h5,p{
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    h5{
+      margin: 0 0 6px;
+      font-weight: normal;
+      color: $color-minor;
+      font-size: 14px;
+    }
+    p{
+      margin: 0 0 20px;
+      font-size: $font-size-base;
+      color: $color-assist;
+      line-height: 26px;
+    }
+  }
+}
+
+//通知栏目
+%notice-block{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: $color-minor;
+  background: #e8f0fe;
+  .icon-exclamation{
+    margin-right: 7px;
+    font-size: 18px;
+    color: $color-handle;
+    line-height: 1;
+  }
+  .content{
+    flex: 1;
+    text-align: justify;
+  }
+}
+
 //iconfont
 %iconfont{
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+//输入框
+%form-control{
+  display: block;
+  padding: 0 $md;
+  width: 100%;
+  border: 1px solid $color-border;
+  color: $color-minor;
+  transition: border 150ms linear;
+  &:focus{
+    border-color: $color-handle;
+  }
+  &.ng-invalid{
+    &.ng-dirty,&.ng-touched{
+      border-color: $color-error;
+    }
+  }
+  &.error{
+    border-color: $color-error;
+  }
+  &:not(textarea){
+    height: $height-base;
+    line-height: $height-base - 2;
+  }
+  &[disabled]{
+    background: #f4f8ff;
+    color: rgba(48,75,120,$button-disabled-opacity);
+  }
+}
+
+//按钮
+%button-base{
+  display: block;
+  height: $height-base;
+  @include border-radius($button-border-radius);
+  text-align: center;
+  cursor: pointer;
+  @extend %user-select;
+  &:not(.button-default){
+    color: #fff;
+    line-height: $height-base;
+    &[disabled]{
+      color: rgba(255,255,255,$button-disabled-opacity);
+    }
+  }
+}
+%button-minor{
+  background: $button-minor;
+  &:not([disabled]):hover{
+    background: $button-minor-hover;
+  }
+}
+%button-main{
+  background: $button-main;
+  &:not([disabled]):hover{
+    background: $button-main-hover;
+  }
+}
+%button-handle{
+  background: $button-handle;
+  &:not([disabled]):hover{
+    background: $button-handle-hover;
+  }
+}
+%button-default{
+  background: $button-default;
+  border: 1px solid $color-border;
+  color: $color-minor;
+  line-height: $height-base - 2px;
+  &:not([disabled]):hover{
+    background: $button-default-hover;
+  }
+  &[disabled]{
+    color: rgba(48,75,120,$button-disabled-opacity);
+  }
+}
+
+/* /extend */
+
+

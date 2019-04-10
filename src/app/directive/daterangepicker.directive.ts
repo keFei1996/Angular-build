@@ -71,6 +71,7 @@ export class DaterangepickerDirective implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges() {
+    console.log(1)
     this.ngAfterViewInit();
   }
 

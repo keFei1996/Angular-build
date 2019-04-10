@@ -263,12 +263,12 @@ body {
     padding-right: $md * 2 + 8px;
     width: 100%;
     background: transparent;
-    &.active {
-      color: $color-handle;
-      &+.dropdown-triangle {
-        @extend .dropdown-triangle.active;
-      }
-    }
+    //&.active {
+    //  color: $color-handle;
+    //  &+.dropdown-triangle {
+    //    @extend .dropdown-triangle.active;
+    //  }
+    //}
   }
 }
 

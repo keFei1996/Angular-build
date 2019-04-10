@@ -19,6 +19,7 @@ export class ThreeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log( moment().format('L'))
   }
 
 

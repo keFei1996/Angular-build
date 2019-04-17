@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  void function iife() {
+    var bar = function () {};
+    var baz = function () {};
+    var foo = function () {
+      console.log(1)
+      bar();
+      baz();
+    };
+    var biz = function () {};
+
+    foo();
+    biz();
+  }();
+
+</script>
+</body>
+</html>

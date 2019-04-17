@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      div{
+        width: 100px;
+        height: 100px;
+        border: 3px solid red;
+        zoom: 2;
+      }
+    </style>
+</head>
+<body>
+  <div>hello</div>
+  <input type="text" id="debounce">
+  <input type="text" id="throttle">
+  <script>
+    //模拟一段ajax请求
+    //
+    // function debounce(fun, delay) {
+    //   return function (args) {
+    //     let that = this
+    //     let _args = args
+    //     clearTimeout(fun.id)
+    //     fun.id = setTimeout(function () {
+    //       fun.call(that,_args)
+    //     }, delay)
+    //   }
+    // }
+    //
+    // let inputb = document.getElementById('debounce')
+    //
+    // let debounceAjax = debounce(ajax, 500)
+    //
+    // inputb.addEventListener('keyup', function (e) {
+    //   debounceAjax(e.target.value)
+    // })
+
+    function ajax(content) {
+      console.log('ajax request ' + content)
+    }
+
+    function throttle(fun, delay) {
+      let last, deferTimer
+      console.log(last)
+      return function (args) {
+        let that = this
+        let _args = arguments
+        let now = +new Date()
+        if (last && now < last + delay) {
+          clearTimeout(deferTimer)
+          deferTimer = setTimeout(function () {
+            last = now
+            fun.apply(that, _args)
+          }, delay)
+        }else {
+          last = now
+          fun.apply(that,_args)
+        }
+      }
+    }
+
+    let throttleAjax = throttle(ajax, 1000)
+
+    let inputc = document.getElementById('throttle')
+    inputc.addEventListener('keyup', function(e) {
+      throttleAjax(e.target.value)
+    })
+
+    // function zhu(){
+    //
+    // }
+    //
+    // zhu.id=1;
+    // console.log(zhu.id)
+  </script>
+</body>
+</html>

@@ -16,6 +16,7 @@ export class ThreeComponent implements OnInit {
       endDate: moment().format('L') + ' 23:59'
     }};
 
+  date=new Date();
   constructor() { }
 
   ngOnInit() {

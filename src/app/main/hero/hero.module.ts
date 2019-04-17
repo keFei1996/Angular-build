@@ -8,10 +8,10 @@ import {ShareModule} from "../../share/share.module";
 
 @NgModule({
   imports: [
-    ShareModule,
     CommonModule,
-    RouterModule.forChild(heroRoutes)
+    RouterModule.forChild(heroRoutes),
+    ShareModule
   ],
-  declarations: [ThreeComponent, HeroComponent]
+  declarations: [ThreeComponent, HeroComponent],
 })
 export class HeroModule {}

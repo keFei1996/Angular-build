@@ -44,8 +44,8 @@ export const mainRoutes: Routes = [
     FormControlComponent,
     FormControlDirective,
     AnimationsComponent,
-    CeShiComponent,
-    HttpComponent
+    HttpComponent,
+    CeShiComponent
   ]
 })
 export class MainModule { }

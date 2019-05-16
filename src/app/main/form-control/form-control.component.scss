@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212121;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  counter-reset: item;
+  margin: -10px;
+  padding-bottom: 40px;
+  width: calc(100% + 20px);
+}
+
+.grid--2 {
+  justify-content: center;
+}
+
+.item {
+  width: calc((100% / 3) - 20px);
+  flex: 1 0 auto;
+  margin: 0 10px 20px 10px;
+  background-color: darkOrchid;
+  border: 2px solid darken(darkOrchid, 10%);
+  border-radius: 0.25em;
+  counter-increment: item;
+  padding: 20px;
+  &::after {
+   content: counter(item);
+  }
+}
+
+.level1 {
+  counter-reset: level1;
+}
+.level1-item:before {
+  counter-reset: level2;
+  counter-increment: level1;
+  content: counter(level1) '.';
+}
+.level2-item:before {
+  counter-reset: level3;
+  counter-increment: level2;
+  content: counter(level1) '-' counter(level2) '.';
+}
+.level3-item:before {
+  counter-increment: level3;
+  content: counter(level1) '-' counter(level2) '-' counter(level3)'.';
+}

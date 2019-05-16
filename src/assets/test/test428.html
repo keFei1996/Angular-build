@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function ke(name,callback){
+    console.log(1)
+    console.log(callback)
+    if(name){
+      console.log(name)
+    }
+    let myName =name +1;
+    callback(myName)
+  }
+
+
+  function zhu(sex){
+    console.log(sex + 'sex')
+  }
+
+  ke('',zhu);
+</script>
+</body>
+</html>

@@ -74,7 +74,7 @@ class Draggable {
       document.onmouseup = () => {
         document.onmousemove = null;
         document.onmouseup = null;
-        this.releaseCapture && this.releaseCapture()
+        // this.releaseCapture && this.releaseCapture()
         if (this.dragFn) {
           this.dragFn({
             left: realL,

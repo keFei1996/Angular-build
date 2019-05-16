@@ -20,7 +20,7 @@
           <ul class="second-level-list">
             <!--<ng-container routerLinkActive="active">-->
               <li *ngFor="let item of menu?.second_level"  routerLinkActive="active">
-                <div routerLink="{{three}}">
+                <div routerLink="{{menu.page_menu + '/' +item.page_menu}}">
                   <span #routerThree>{{item.name}}</span>
                 </div>
               </li>

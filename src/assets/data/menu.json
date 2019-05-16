@@ -8,6 +8,14 @@
         {
           "name": "3D效果",
           "page_menu": "three"
+        },
+        {
+          "name": "test01",
+          "page_menu": "test01"
+        },
+        {
+          "name": "test02",
+          "page_menu": "test02"
         }
       ]
     },

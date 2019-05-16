@@ -10,7 +10,6 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpComponent } from './http/http.component';
 import { FormControlDirective } from './form-control/form-control.directive';
 import { AnimationsComponent } from './animations/animations.component';
-import { CeShiComponent } from './ceShi/ceshi.component';
 
 
 
@@ -24,8 +23,7 @@ export const mainRoutes: Routes = [
       { path : 'time', component : TimesComponent},
       { path : 'form' , component : FormControlComponent } ,
       { path : 'http' , component : HttpComponent } ,
-      { path: 'animations' , component : AnimationsComponent},
-      { path: 'ceShi' , component : CeShiComponent},
+      { path: 'animations' , component : AnimationsComponent}
     ]
   }
 ];
@@ -44,8 +42,7 @@ export const mainRoutes: Routes = [
     FormControlComponent,
     FormControlDirective,
     AnimationsComponent,
-    HttpComponent,
-    CeShiComponent
+    HttpComponent
   ]
 })
 export class MainModule { }

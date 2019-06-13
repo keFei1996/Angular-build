@@ -1,0 +1,17 @@
+.mommy{
+  border:1px solid black;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  div{
+    width: 4px;
+    height: 4px;
+    background:red;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+  }
+}
+
